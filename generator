@@ -1,0 +1,8 @@
+# linux 下的命令
+#!/bin/bash
+java -jar monkey-generator-basic/target/monkey-generator-basic-1.0-SNAPSHOT-jar-with-dependencies.jar "$@"
+
+# windows 下单命令
+# @echo off
+# java -jar target/yuzi-generator-basic-1.0-SNAPSHOT-jar-with-dependencies.jar %*
+
