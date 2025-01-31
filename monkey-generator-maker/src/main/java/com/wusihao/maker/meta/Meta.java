@@ -21,12 +21,12 @@ public class Meta {
     private String version;
     private String author;
     private String createTime;
-    private FileConfigDTO fileConfig;
-    private ModelConfigDTO modelConfig;
+    private FileConfig fileConfig;
+    private ModelConfig modelConfig;
 
     @NoArgsConstructor
     @Data
-    public static class FileConfigDTO {
+    public static class FileConfig {
         private String inputRootPath;
         private String outputRootPath;
         private String type;
@@ -44,7 +44,7 @@ public class Meta {
 
     @NoArgsConstructor
     @Data
-    public static class ModelConfigDTO {
+    public static class ModelConfig {
         private List<ModelsInfo> models;
 
         @NoArgsConstructor
