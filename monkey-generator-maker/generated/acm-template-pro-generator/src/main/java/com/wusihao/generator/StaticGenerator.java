@@ -1,4 +1,4 @@
-package {basePackage}.generator;
+package com.wusihao.generator;
 
 import cn.hutool.core.io.FileUtil;
 

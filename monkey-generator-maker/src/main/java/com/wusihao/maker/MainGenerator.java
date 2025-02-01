@@ -2,6 +2,7 @@ package com.wusihao.maker;
 
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.StrUtil;
+import com.wusihao.maker.generator.JarGenerator;
 import com.wusihao.maker.generator.file.DynamicFileGenerator;
 import com.wusihao.maker.meta.Meta;
 import com.wusihao.maker.meta.MetaManager;
@@ -12,7 +13,7 @@ import java.io.IOException;
 
 public class MainGenerator {
 
-    public static void main(String[] args) throws TemplateException, IOException {
+    public static void main(String[] args) throws TemplateException, IOException, InterruptedException {
         Meta meta = MetaManager.getMetaObject();
         System.out.println(meta);
 
@@ -64,7 +65,7 @@ public class MainGenerator {
 
         // Main
         inputFilePath = inputResourcePath + File.separator + "templates"+ File.separator + "java" + File.separator + "Main.java.ftl";
-        outputFilePath = outputBaseJavaPackagePath + File.separator + "CommandExecutor.java";
+        outputFilePath = outputBaseJavaPackagePath + File.separator + "Main.java";
         DynamicFileGenerator.doGenerate(inputFilePath , outputFilePath, meta);
 
         // generator.DynamicGenerator
@@ -81,5 +82,14 @@ public class MainGenerator {
         inputFilePath = inputResourcePath + File.separator + "templates"+ File.separator + "java"+ File.separator + "generator" + File.separator + "StaticGenerator.java.ftl";
         outputFilePath = outputBaseJavaPackagePath + File.separator + "generator" + File.separator + "StaticGenerator.java";
         DynamicFileGenerator.doGenerate(inputFilePath , outputFilePath, meta);
+
+
+        // pom.xml
+        inputFilePath = inputResourcePath + File.separator + "templates"+ File.separator +"pom.xml.ftl";
+        outputFilePath = outputPath + File.separator + "pom.xml";
+        DynamicFileGenerator.doGenerate(inputFilePath , outputFilePath, meta);
+
+        // 构建 jar 包
+        JarGenerator.doGenerate(outputPath);
     }
 }
