@@ -39,7 +39,32 @@ public class MainGenerator {
 
         // model.DataModel
         inputFilePath = inputResourcePath + File.separator + "templates"+ File.separator + "java"+ File.separator + "model"+ File.separator + "DataModel.java.ftl";
-        outputFilePath = outputBaseJavaPackagePath + ""+ File.separator + "model"+ File.separator + "DataModel.java";
+        outputFilePath = outputBaseJavaPackagePath + File.separator + "model"+ File.separator + "DataModel.java";
+        DynamicFileGenerator.doGenerate(inputFilePath , outputFilePath, meta);
+
+        // cli.command.ConfigCommand
+        inputFilePath = inputResourcePath + File.separator + "templates"+ File.separator + "java"+ File.separator + "cli"+ File.separator + "command" + File.separator + "ConfigCommand.java.ftl";
+        outputFilePath = outputBaseJavaPackagePath + "cli" + File.separator + "command"+ File.separator + "ConfigCommand.java";
+        DynamicFileGenerator.doGenerate(inputFilePath , outputFilePath, meta);
+
+        // cli.command.GenerateCommand
+        inputFilePath = inputResourcePath + File.separator + "templates"+ File.separator + "java"+ File.separator + "cli"+ File.separator + "command" + File.separator + "GenerateCommand.java.ftl";
+        outputFilePath = outputBaseJavaPackagePath + File.separator + "cli" + File.separator + "command"+ File.separator + "GenerateCommand.java";
+        DynamicFileGenerator.doGenerate(inputFilePath , outputFilePath, meta);
+
+        // cli.command.ListCommand
+        inputFilePath = inputResourcePath + File.separator + "templates"+ File.separator + "java"+ File.separator + "cli"+ File.separator + "command" + File.separator + "ListCommand.java.ftl";
+        outputFilePath = outputBaseJavaPackagePath + File.separator + "cli" + File.separator + "command"+ File.separator + "ListCommand.java";
+        DynamicFileGenerator.doGenerate(inputFilePath , outputFilePath, meta);
+
+        // cli.CommandExecutor
+        inputFilePath = inputResourcePath + File.separator + "templates"+ File.separator + "java"+ File.separator + "cli" + File.separator + "CommandExecutor.java.ftl";
+        outputFilePath = outputBaseJavaPackagePath + File.separator + "cli" + File.separator + "CommandExecutor.java";
+        DynamicFileGenerator.doGenerate(inputFilePath , outputFilePath, meta);
+
+        // Main
+        inputFilePath = inputResourcePath + File.separator + "templates"+ File.separator + "java" + File.separator + "Main.java.ftl";
+        outputFilePath = outputBaseJavaPackagePath + File.separator + "CommandExecutor.java";
         DynamicFileGenerator.doGenerate(inputFilePath , outputFilePath, meta);
     }
 }
