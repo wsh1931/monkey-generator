@@ -1,9 +1,0 @@
-com\wusihao\generator\StaticGenerator.class
-com\wusihao\cli\command\GenerateCommand.class
-com\wusihao\generator\DynamicGenerator.class
-com\wusihao\Main.class
-com\wusihao\cli\command\ConfigCommand.class
-com\wusihao\cli\CommandExecutor.class
-com\wusihao\generator\MainGenerator.class
-com\wusihao\model\DataModel.class
-com\wusihao\cli\command\ListCommand.class

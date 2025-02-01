@@ -6,7 +6,7 @@
   "author": "wusihao",
   "createTime": "2023-11-22",
   "fileConfig": {
-    "inputRootPath": "/Users/wusihao/Code/monkey-generator/monkey-generator-demo-projects/acm-template-pro",
+    "inputRootPath": "D:/JAVA/project/monkey-generator/monkey-generator-demo-projects/acm-template-pro",
     "outputRootPath": "generated",
     "type": "dir",
     "files": [

@@ -3,6 +3,7 @@ package com.wusihao.maker;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.StrUtil;
 import com.wusihao.maker.generator.JarGenerator;
+import com.wusihao.maker.generator.ScriptGenerator;
 import com.wusihao.maker.generator.file.DynamicFileGenerator;
 import com.wusihao.maker.meta.Meta;
 import com.wusihao.maker.meta.MetaManager;
@@ -21,6 +22,7 @@ public class MainGenerator {
         String projectPath = System.getProperty("user.dir") + File.separator + "monkey-generator-maker";
         // monkey-generator-maker/generated/acm-template-pro-generator
         String outputPath = projectPath + File.separator + "generated" + File.separator + meta.getName();
+//        String outputPath = projectPath + File.separator + "generated";
         if (!FileUtil.exist(outputPath)) {
             FileUtil.mkdir(outputPath);
         }
@@ -91,5 +93,11 @@ public class MainGenerator {
 
         // 构建 jar 包
         JarGenerator.doGenerate(outputPath);
+
+        // 封装脚本
+        String shellOutputFilePath = outputPath + File.separator + "generator";
+        String jarName = String.format("%s-%s-jar-with-dependencies.jar", meta.getName(), meta.getVersion());
+        String jarPath = "target" + File.separator + jarName;
+        ScriptGenerator.doGenerate(shellOutputFilePath, jarPath);
     }
 }
